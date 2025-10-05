@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Nasa App challenge</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,9 +13,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="mars">
-      <div class="heading">team gravity presents</div>
-    </div>
+    <header>
+      <div class="navbar">
+        <div class="logo"></div>
+        <ul>
+          <li><a href="index.html" id="crater_heading_one"><p class="crater_heading_one">Home</p></a></li>
+          <li><a href="jazero_crater.html" id="crater_heading_two"><p class="crater_heading_two">Our Objectives</p></a></li>
+          <li><a href="problem.html" id="crater_heading_three"><p class="crater_heading_three">Problem Statment</p></a></li>
+          <li><a href="members.html" id="crater_heading_four"><p class="crater_heading_four">Team Members</p></a></li>
+          <li> <a href="community.html">
+          <button id="btn" style="margin-top: 20px;">Launch</button>
+        </a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="mars">
+        <h3 id="hding">Click the launch button given below</h3>
+        <div class="heading" ;>team gravity presents</div>
+        <a href="community.html">
+          <button id="btn">Launch</button>
+        </a>  
+        <br>
+        <label for="mission_duration" id="mission_duration">Mission Duration</label>
+        <select name="years" id="years">
+          <option value="years">12 Years</option>
+        </select>
+        <br>
+        <label for="crew" id="crew">Crew Members</label>
+        <select name="crew_members" id="crew_members">
+          <option value="8">8</option>
+        </select>
+        <br>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

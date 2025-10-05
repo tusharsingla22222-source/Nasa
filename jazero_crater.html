@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jezero Recycler Array - Project Objectives</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="jazero_crater.css">
+
+    <style>
+        :root {
+            --primary-color: #e6e6e6; /* Light gray for text */
+            --secondary-color: orange; /* NASA/Martian accent color */
+            --background-color: #1a1a1a; /* Dark background */
+            --highlight-color: #3b3b3b;
+            --font-family: 'Michroma', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background-color: var(--background-background-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--highlight-color);
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            border-bottom: 1px dashed var(--highlight-color);
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            /* Michroma can be too narrow, so we widen the letters slightly */
+            letter-spacing: 0.5px;
+        }
+
+        .objective-section {
+            padding: 15px;
+            background-color: var(--highlight-color);
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .metric, .outcome {
+            margin-left: 20px;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .metric strong, .outcome strong {
+            color: var(--secondary-color);
+        }
+
+        .metric li::before {
+            content: ">>";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .outcome li::before {
+            content: "++";
+            color: #4CAF50; /* Green for positive output */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .sustainability-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sustainability-list li {
+            background-color: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">
+        <button id="button">Back</button>
+    </a>
+    <div class="container">
+        <h1>Project Objectives: The Jezero Recycler Array</h1>
+
+        <p>Our primary objective is to design and implement a sustainable, closed-loop waste management infrastructure at <b>Jezero Crater</b> that maximizes resource recovery and minimizes reliance on Earth-supplied cargo. By focusing on immediate, in-situ reuse and recycling (<b>ISM/ISRU<b>), the Jezero Recycler Array will convert inorganic mission waste into essential commodities, enhancing the long-term viability and psychological well-being of the crew.</p>
+
+        <hr>
+
+        <h2>Core Objectives: Maximizing Resource Recovery</h2>
+        <p>The Jezero Recycler Array is engineered to address all three challenge scenarios, establishing a comprehensive circular economy for mission waste.</p>
+
+        <div class="objective-section">
+            <h3>1. Structural & Habitat Outfitting (Residence Renovations)</h3>
+            <p><strong>Objective:</strong> Instantly repurpose bulky, single-use habitat packaging and structural elements into durable components for habitat expansion and maintenance.</p>
+            
+            <ul class="metric">
+                [cite_start]<li><strong>Metric:</strong> Achieve a near-100% recycling and reuse rate for large-scale, post-deployment materials, including <b>aluminum structures, polymer matrix composites, and foam packaging</b>. [cite: 3]</li>
+            </ul>
+            <ul class="outcome">
+                [cite_start]<li><strong>Outcome:</strong> Produce high-quality <b>3D printer filament</b> (from polymers/composites) for custom tools, as well as <b>insulation panels and tiles</b> (from compressed foams) for interior habitat outfitting and path lining. [cite: 3] [cite_start]This process is crucial for minimizing the estimated <b>6,600 kg</b> of structural materials alone. [cite: 3]</li>
+            </ul>
+        </div>
+
+        <div class="objective-section">
+            <h3>2. Crew Morale & Consumables (Cosmic Celebrations)</h3>
+            <p><strong>Objective:</strong> Engineer a functional subsystem to repurpose flexible polymer and textile waste into items that provide critical psychological and sensory input for crew welfare.</p>
+            
+            <ul class="metric">
+                [cite_start]<li><strong>Metric:</strong> Convert <b>polymer films</b> (PE, multi-layered laminates, Nylon) from food and drink packaging, and various <b>textiles</b>
+                    > (cotton, cellulose, polyester) into new celebration and comfort items. [cite: 1]</li>
+            </ul>
+            <ul class="outcome">
+                [cite_start]<li><strong>Outcome:</strong> Create <b>aesthetic objects and 3D-printed ornaments</b> (from recycled plastics) that require zero transport mass, providing a crucial psychological return on investment by engineering commemorative events without disposable resources. [cite: 1] [cite_start]Textiles will be shredded and converted into cushioning material or simple storage containers. [cite: 1]</li>
+            </ul>
+        </div>
+
+        <div class="objective-section">
+            <h3>3. Mission & Propellant Support (Daring Discoveries)</h3>
+            <p><strong>Objective:</strong> Integrate post-experimentation waste streams, particularly carbon byproducts, into the vital In-Situ Resource Utilization (ISRU) and propellant production loop.</p>
+            
+            <ul class="metric">
+                [cite_start]<li><strong>Metric:</strong> Incorporate <b>surplus carbon</b> (a byproduct of atmospheric $\text{CO}_2$ extraction) as a non-volatile feedstock or binder component for essential structural materials. [cite: 2]</li>
+            </ul>
+            <ul class="outcome">
+                [cite_start]<li><strong>Outcome:</strong> Utilize the recovered carbon to act as a <b>binder or reinforcement agent</b> when mixed with <b>Martian regolith</b>, enabling the in-situ manufacturing of stronger habitat shielding, durable tools, and surface infrastructure. [cite: 2] [cite_start]This directly supports the need for propellant precursors like Hydrogen ($\text{H}_2$) and Oxygen ($\text{O}_2$) generated by integrated systems. [cite: 2]</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>Technical & Sustainability Commitments</h2>
+        <p>Our design strictly adheres to the fundamental constraints of a sustainable Martian mission:</p>
+
+        <ul class="sustainability-list">
+            <li>
+                <strong>Minimize Crew Time:</strong> The system is designed for automated, <b>"batch-and-go"</b> operation, minimizing the time crew members must dedicate to waste processing and maintenance, which is a major logistical concern.
+            </li>
+            <li>
+                <strong>Maximize Process Efficiency:</strong> Implement modular recycling units that utilize <b>cascaded waste heat</b> and mechanical/thermal processes to achieve a near-100% closed-loop system, minimizing external energy and maximizing water recovery.
+            </li>
+            <li>
+                <strong>Health and Safety:</strong> Our processes strictly <b>avoid incineration, toxic emissions, PFAS, and microplastics</b> in wastewater, ensuring environmental compliance and promoting a tidy, non-polluting Martian environment.
+            </li>
+        </ul>
+
+    </div>
+</body>
+<a href="research.html">
+        <button id="btn">Deep Dive in Our Research</button>
+    </a>
+</html>

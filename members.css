@@ -1,0 +1,100 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Michroma", Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+}
+#button{
+    height: 50px;
+    width: 100px;
+    color: white;
+    background-color: rgb(42, 72, 239);
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-left: 20px;
+    font-family: 'Michroma', Arial, Helvetica, sans-serif;
+}
+#button:hover{
+    background-color: green;
+}
+.heading{
+    font-size: 60px;
+    color: orange;
+    text-align: center;
+    word-spacing: 20px;
+    letter-spacing: 10px;
+    /* text-shadow: 3px 3px 4px yellow; */
+}
+.box{
+    height: 1300px;
+    width: 95%;
+    border: 2px solid rgb(75, 50, 2);
+    margin-top: 100px;
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.image{
+    height:500px;
+    width: 350px;
+    border: 2px solid rgb(88, 86, 86);
+    margin: 50px;
+    margin-left: 70px;
+}
+.member{
+    height: 400px;
+    width: 300px;
+    border: 2px solid transparent ;
+    margin: 20px;
+}
+.adhyatm{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/Adhytam.jpeg");
+    background-size: cover;
+    border: none;
+}
+.sunny{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/Sunny.jpg");
+    background-size: cover;
+    border: none;
+}
+.tushar{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/tushar_image.jpeg");
+    background-size: cover;
+    border: none;
+}
+.kushagra{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/Kushagra.jpeg");
+    background-size: cover;
+    border: none;
+}
+.smit{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/smit.jpeg");
+    background-size: cover;
+    border: none;
+}
+.kabir{
+    height: 400px;
+    width: 300px;
+    background-image: url("images/kabir.jpeg");
+    background-size: cover;
+    border: none;
+}
+
+#h3{
+    color: white;
+    margin-left: 70px;
+}

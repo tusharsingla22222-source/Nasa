@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Resource Manager</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Michroma Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Michroma font globally */
+        body {
+            font-family: 'Michroma', sans-serif;
+            background-color: #000;
+            color: #E5E5E5; /* Light grey text for contrast */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container-card {
+            background-color: #1a1a1a; /* Darker grey for the card */
+            box-shadow: 0 0 40px rgba(0, 255, 0, 0.2); /* Subtle neon green glow */
+            border: 1px solid #0f0;
+        }
+
+        .header-box {
+            border: 3px solid #0f0;
+            display: inline-block;
+            padding: 8px 20px;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-shadow: 0 0 5px #0f0;
+            color: #0f0;
+        }
+
+        /* Custom Styles for the list items based on color status (now Expiry) */
+        .status-red { color: #f87171; }    /* Expires < 10 days */
+        .status-yellow { color: #facc15; } /* Expires < 3 months */
+        .status-green { color: #34d399; }  /* Expires > 3 months */
+
+        /* Button styles with neon effect (now used for static display) */
+        .neon-button {
+            border: 2px solid #0f0;
+            color: #0f0;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #0f0;
+            box-shadow: 0 0 10px #0f0;
+            /* Static styling - removing hover effects for non-interactive elements */
+        }
+        
+        /* Recycle Icon styling (static) */
+        .recycle-icon {
+            color: #34d399; /* Green color for the icon */
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+
+    <div id="app" class="container-card max-w-5xl w-full p-6 sm:p-10 rounded-xl">
+        
+        <header class="flex flex-col sm:flex-row justify-start items-start sm:items-center mb-8 space-y-4 sm:space-y-0">
+            <div class="header-box">Garden</div>
+        </header>
+
+        <!-- Main Content Area: Inventory & Sidebar -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- Column 1 & 2: Inventory Grid -->
+            <div class="lg:col-span-2 grid grid-cols-2 gap-4">
+                <div class="col-span-2 flex justify-between gap-4 font-bold text-lg mb-2">
+                    <div class="text-center w-1/2 border-b-2 border-green-500 pb-1">Item</div>
+                    <div class="text-center w-1/2 border-b-2 border-red-500 pb-1">Quantity Left (Status)</div>
+                </div>
+
+                <!-- Inventory List (STATIC HTML CONTENT) -->
+                <div id="inventory-list" class="col-span-2 space-y-3">
+                    
+                    <!-- Item 1: Red Status -->
+                    <div class="flex justify-between items-center text-base sm:text-lg border-b border-gray-700 pb-2">
+                        <span class="status-red w-1/2">Fertilizer Mix</span>
+                        <span class="status-red w-1/2 text-right">1 Kg</span>
+                    </div>
+                    
+                    <!-- Item 2: Yellow Status -->
+                    <div class="flex justify-between items-center text-base sm:text-lg border-b border-gray-700 pb-2">
+                        <span class="status-yellow w-1/2">Seed Packets (Basil)</span>
+                        <span class="status-yellow w-1/2 text-right">12 Packs</span>
+                    </div>
+                    
+                    <!-- Item 3: Green Status -->
+                    <div class="flex justify-between items-center text-base sm:text-lg border-b border-gray-700 pb-2">
+                        <span class="status-green w-1/2">Pest Spray (Organic)</span>
+                        <span class="status-green w-1/2 text-right">1 Bottle</span>
+                    </div>
+                    
+                    <!-- Item 4: Red Status -->
+                    <div class="flex justify-between items-center text-base sm:text-lg border-b border-gray-700 pb-2">
+                        <span class="status-red w-1/2">Compost Tea Starter</span>
+                        <span class="status-red w-1/2 text-right">1 Jar</span>
+                    </div>
+                    
+                    <!-- Item 5: Green Status -->
+                    <div class="flex justify-between items-center text-base sm:text-lg border-b border-gray-700 pb-2">
+                        <span class="status-green w-1/2">pH Test Kit</span>
+                        <span class="status-green w-1/2 text-right">1 Kit</span>
+                    </div>
+                </div>
+
+                <p class="col-span-2 text-xs text-gray-500 mt-4 text-center">
+                    Items or Material present in garden
+                </p>
+            </div>
+
+            <!-- Column 3: Legends, Suggestions, Recycle & Back -->
+            <div class="lg:col-span-1 space-y-6">
+                
+                <!-- Legends Block -->
+                <div class="p-4 rounded-lg border-2 border-gray-700 bg-gray-900 shadow-inner shadow-gray-800">
+                    <h3 class="text-lg font-bold mb-3 text-white">Legends</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center space-x-2">
+                            <span class="h-3 w-3 rounded-full bg-red-500"></span>
+                            <span class="status-red font-semibold">Expires < 10 Days</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="h-3 w-3 rounded-full bg-yellow-400"></span>
+                            <span class="status-yellow font-semibold">Expires < 3 Months</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <span class="h-3 w-3 rounded-full bg-green-500"></span>
+                            <span class="status-green font-semibold">Expires > 3 Months</span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <!-- Suggestion Button/Box (STATIC) -->
+                <div class="p-4 rounded-xl border-2 border-green-500/50 bg-gray-900">
+                    <!-- Styled as a button, but no functionality -->
+                    <div class="neon-button w-full py-3 rounded-lg text-lg font-bold text-center">
+                        Suggestion
+                    </div>
+                    <!-- Static Suggestion Output -->
+                    <div class="mt-4 text-sm italic p-2 border border-green-700 rounded-md bg-gray-800">
+                        *Suggestion:* Prioritize using the Fertilizer Mix and Compost Tea Starter, as they expire in less than 10 days (Red Status).
+                    </div>
+                </div>
+
+                <!-- Where to Recycle (STATIC) -->
+                <div class="p-4 rounded-xl border-2 border-blue-500/50 bg-gray-900">
+                    <h3 class="text-lg font-bold mb-3 text-white">Where to Recycle:</h3>
+                    <p class="text-sm">
+                        Check local council website for composting large yard waste and recycling plastic seed trays.
+                    </p>
+                </div>
+
+                <!-- Recycle Button (STATIC) -->
+                <div class="flex justify-center">
+                    <!-- This is a static SVG icon now, not a functional button -->
+                    <div class="recycle-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="recycle-icon">
+                            <!-- Font Awesome Recycle Icon (SVG) -->
+                            <path fill="currentColor" d="M142.9 192.3L275.4 324.7c2.2 2.2 5 3.4 7.8 3.4s5.7-1.2 7.8-3.4L419.1 192.3c6.3-6.3 14.8-9.9 23.7-9.9c18.7 0 33.9 15.2 33.9 33.9c0 8.9-3.6 17.4-9.9 23.7L308.8 418.9c-12.5 12.5-29.2 19.5-46.7 19.5s-34.2-7.1-46.7-19.5L55 240c-6.3-6.3-9.9-14.8-9.9-23.7c0-18.7 15.2-33.9 33.9-33.9c8.9 0 17.4 3.6 23.7 9.9zM302.5 5.5l140.7 140.7c6.3 6.3 9.9 14.8 9.9 23.7c0 18.7-15.2 33.9-33.9 33.9c-8.9 0-17.4-3.6-23.7-9.9L275.4 122.5c-2.2-2.2-5-3.4-7.8-3.4s-5.7 1.2-7.8 3.4L112.5 304.7c-6.3 6.3-14.8 9.9-23.7 9.9c-18.7 0-33.9-15.2-33.9-33.9c0-8.9 3.6-17.4 9.9-23.7L255.8 5.5c12.5-12.5 29.2-19.5 46.7-19.5s34.2 7 46.7 19.5z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button at the bottom left (Static) -->
+        <div class="mt-8">
+            <a href="community.html">
+                 <div class="neon-button px-6 py-2 rounded-lg text-lg font-bold">
+                Back
+            </div>
+            </a>
+        </div>
+
+    </div>
+    <!-- Removed all JavaScript code -->
+</body>
+</html>
